@@ -46,7 +46,6 @@ const List = () => {
 			},
 		]);
 	};
-	//
 	const addCard = (newCard, columnId) => {
 		setColumns(
 			columns.map((column) => {
@@ -60,7 +59,6 @@ const List = () => {
 			})
 		);
 	};
-	//
 	return (
 		<div className={styles.list}>
 			<header className={styles.header}>
@@ -79,9 +77,7 @@ const List = () => {
 						title={column.title}
 						icon={column.icon}
 						cards={column.cards}
-						//
 						addCard={addCard}
-						//
 					/>
 				))}
 			</section>
