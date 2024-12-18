@@ -1,12 +1,20 @@
 import styles from "./Column.module.scss";
+import Card from "../Card/Card";
+import CardForm from "../CardForm/CardForm";
 
 const Column = (props) => {
 	return (
 		<article className={styles.column}>
 			<h1 className={styles.title} type="text">
 				<span className={styles.icon + " fa fa-" + props.icon} />
-				{props.text}
+				{props.title}
 			</h1>
+			<ul className={styles.cards}>
+				{props.cards.map((card) => (
+					<Card key={card.id} title={card.title} />
+				))}
+			</ul>
+			<CardForm columnId={props.id} action={props.addCard} />
 		</article>
 	);
 };
