@@ -52,10 +52,6 @@ const reducer = (state, action) => {
 	}
 };
 
-const dupa = initialState.columns[0].id;
-
-console.log(dupa);
-
 const store = createStore(
 	reducer,
 	initialState,
