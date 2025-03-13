@@ -1,8 +1,11 @@
 import styles from "./Button.module.scss";
 
-const Button = ({ type = "button", children, onClick }) => {
+const Button = ({ type = "button", variant = "button", children, onClick }) => {
+	const buttonClass = variant
+		? `${styles.button} ${styles[variant]}`
+		: styles.button;
 	return (
-		<button type={type} className={styles.button} onClick={onClick}>
+		<button type={type} className={buttonClass} onClick={onClick}>
 			{children}
 		</button>
 	);

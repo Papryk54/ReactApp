@@ -33,4 +33,12 @@
 			color: darken($color-light, 20%);
 		}
 	}
+
+	&.favorite {
+		background: transparent;
+		color: $color-favorite;
+		font-size: 26px;
+		margin: 0;
+		padding: 0;
+	}
 }
