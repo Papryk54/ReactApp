@@ -11,19 +11,29 @@ export const getFilteredCards = ({ cards, searchValue }, columnId) =>
 
 export const getAllColumns = (state) => state.columns;
 
+export const getListById = ({ lists }, listId) =>
+	lists.find((list) => list.id === listId);
+
+export const getColumnsByList = ({ columns }, listId) =>
+	columns.filter((column) => column.listId === listId);
+
+export const getAllLists = ({ lists }) => lists;
+
 // action creators
 export const addColumn = (payload) => ({ type: "ADD_COLUMN", payload });
 
 export const addCard = (payload) => ({ type: "ADD_CARD", payload });
 
-export const searchValue = (payload) => ({type: "SEARCH_VALUE", payload})
+export const searchValue = (payload) => ({ type: "SEARCH_VALUE", payload });
+
+export const addList = (payload) => ({ type: "ADD_LIST", payload });
 
 const reducer = (state, action) => {
 	switch (action.type) {
 		case "ADD_COLUMN":
 			return {
 				...state,
-				columns: [...state.columns, { ...action.payload, id: shortid() }],
+				columns: [...state.columns, { ...action.payload, id: shortid(), }],
 			};
 		case "ADD_CARD":
 			return {
@@ -49,6 +59,18 @@ const reducer = (state, action) => {
 			};
 		default:
 			return state;
+		case "ADD_LIST":
+			return {
+				...state,
+				lists: [
+					...state.lists,
+					{
+						id: shortid(),
+						title: action.payload.title,
+						description: action.payload.description,
+					},
+				],
+			};
 	}
 };
 
