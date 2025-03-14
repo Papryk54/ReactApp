@@ -6,7 +6,6 @@ export const getFilteredCards = ({ cards, searchValue }, columnId) =>
 	cards.filter(
 		(card) => card.columnId === columnId && strContains(card.title, searchValue)
 	);
-
 export const getFavoriteCards = (state) =>
 	state.cards.filter((card) => card.isFavorite);
 
@@ -25,7 +24,6 @@ export const toggleTrash = (cardId) => ({
 	type: TOGGLE_TRASH,
 	payload: cardId,
 });
-
 export const addCard = (payload) => ({ type: ADD_CARD, payload });
 
 // reducer

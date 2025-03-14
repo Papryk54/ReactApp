@@ -9,7 +9,6 @@ const ListForm = () => {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const dispatch = useDispatch();
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (title.trim() === "" || description.trim() === "") return;

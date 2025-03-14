@@ -5,11 +5,11 @@ import TextInput from "../TextInput/TextInput";
 import { useDispatch } from "react-redux";
 import { addColumn } from "../../redux/columnsRedux";
 
-const ColumnForm = ({listId}) => {
+const ColumnForm = () => {
 	const [title, setTitle] = useState("");
 	const [icon, setIcon] = useState("");
+	const [listId] = useState("");
 	const dispatch = useDispatch();
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		dispatch(addColumn({ title, icon, listId }));

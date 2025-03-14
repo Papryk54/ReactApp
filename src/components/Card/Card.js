@@ -5,11 +5,9 @@ import { toggleFavorite, toggleTrash } from "../../redux/cardsRedux";
 
 const Card = ({ title, isFavorite, id }) => {
 	const dispatch = useDispatch();
-
 	const handleClickFavorite = () => {
 		dispatch(toggleFavorite(id));
 	};
-
 	const handleClickTrash = () => {
 		dispatch(toggleTrash(id));
 	};
