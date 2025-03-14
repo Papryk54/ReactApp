@@ -39,6 +39,24 @@
 		color: $color-favorite;
 		font-size: 26px;
 		margin: 0;
-		padding: 0;
+		padding: 10px;
+
+		&:hover {
+			color: darken($color-favorite, 10%);
+			background: lighten($color-favorite, 10%);
+		}
+	}
+
+	&.trash {
+		background: transparent;
+		color: $color-trash;
+		font-size: 26px;
+		margin: 0;
+		padding: 10px;
+
+		&:hover {
+			color: darken($color-trash, 10%);
+			background: lighten($color-warning, 10%);
+		}
 	}
 }

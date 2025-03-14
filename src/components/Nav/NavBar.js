@@ -1,12 +1,11 @@
 import styles from "./Nav.module.scss";
-import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 	return (
 		<nav className={styles.nav}>
 			{/* <Container> */}
-			<img src="#" href="/" className={styles.logo}></img>
+			<img src="/logo192.png" href="#" alt="logo" className={styles.logo}></img>
 			<ul className={styles.ul}>
 				<li className={styles.li}>
 					<NavLink
