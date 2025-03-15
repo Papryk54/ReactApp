@@ -4,12 +4,14 @@ import Button from "../Button/Button";
 import TextInput from "../TextInput/TextInput";
 import { useDispatch } from "react-redux";
 import { addColumn } from "../../redux/columnsRedux";
+import { useParams } from "react-router-dom";
 
 const ColumnForm = () => {
 	const [title, setTitle] = useState("");
 	const [icon, setIcon] = useState("");
-	const [listId] = useState("");
+	const { listId } = useParams();
 	const dispatch = useDispatch();
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		dispatch(addColumn({ title, icon, listId }));
